@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<head>
+    <title>Chat</title>
+</head>
+<body>
+<form action="/send" method="post">
+    <input class="input is-medium is-rounded" type="text" name="message" placeholder="Input your message here." required>
+    <button class="button is-medium is-fullwidth is-primary-outlined" type="submit">Send</button>
+</form>
+
+<p class="title is-2"> List of recieved messages:</p>
+<div class="content is-medium">
+<ul>
+    <li th:each="message : ${messages}" th:text="${message}"></li>
+</ul>
+</div>
+</body>
+</html>

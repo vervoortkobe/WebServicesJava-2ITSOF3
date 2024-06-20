@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infractions List</title>
+</head>
+<body>
+    <h1>Infractions List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Date</th>
+                <th>Street</th>
+                <th>Driving Direction</th>
+                <th>Speed Limit</th>
+                <th>Passers By</th>
+                <th>Speed Infractions</th>
+                <th>Red Light Infractions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through the list of infractions and display each infraction -->
+            <!-- Assuming the list attribute in the model contains a List<Infraction> -->
+            <th:block th:each="infraction : ${list}">
+                <tr>
+                    <td th:text="${infraction.id}"></td>
+                    <td th:text="${infraction.year}"></td>
+                    <td th:text="${infraction.month}"></td>
+                    <td th:text="${infraction.date}"></td>
+                    <td th:text="${infraction.street}"></td>
+                    <td th:text="${infraction.driving_direction}"></td>
+                    <td th:text="${infraction.speed_limit}"></td>
+                    <td th:text="${infraction.passers_by}"></td>
+                    <td th:text="${infraction.infractions_speed}"></td>
+                    <td th:text="${infraction.infractions_red_light}"></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+Question 1 (13 points)
+
+Make a Spring Boot webapplication with JPA that manages a student database. The database has following fields : first name, last name, date of birth and study program (eg TI).
+Provide a form in Thymeleaf that allows to create a student (4 points). Before the student is created, a check is executed whether he already exists and if that is the case he is not persisted (5 points).
+After the student is created, a list is shown of all the students. The list is ordered alphabetically on the last name (4 points).
+
+Question 2 (13 points)
+
+Make a Spring Boot webapplication using JPA that allows to check if a given date (format : dd/mm/yyyy) is within a certain interval. Provide a form in Thymeleaf with three fields : the date to check, the start date and end date (3 points).
+When the form is submitted, the webservice returns an html with :
+1/ 'Yes' or 'No' (date to check is within the specified interval) (3 points)
+2/ the number of days the date to check is removed from the date the form is submitted (3 points)
+
+When the html is returned, the date to check, Yes/No and the number of days are saved to the in-memory database (4 points)
+
+Vraag 3 (13 punten)
+
+Maak een Spring Boot Web applicatie met een Redis database om users te managen.
+Test de functionaliteiten door middel van de UserTests testklasse (als je een andere poort gebruikt, pas dan URL in de testklasse aan).
+De app heeft volgende functionaliteiten :
+1/ signup (/signup) met email en paswoord (3 punten). De Redis key bestaat uit "users:" + bytesToHex(email + paswoord) + ":" + userid (bv users:87ee2dfeb9f13f246a5376e45e6cd3bddcda6babf6b82fa:7). De bytesToHex methode staat in de UserController klasse. De userid haal je uit een counter die je bij iedere nieuwe user verhoogt. In de Redis value staat de leesbare (niet gehashte) email. De signup webmethode geeft de string "SIGNED UP" terug.
+2/ login (/login) met email en paswoord (3 punten). Als er een key is die bytesToHex(email + paswoord) bevat, geeft de controller als resultaat de string "LOGGED IN" terug of "NOT LOGGED IN" als dat niet het geval is.
+3/ email van een user met een userid (/user/userid) (3 punten). Het resultaat is uiteraard een string met zijn email.
+4/ een AOP klasse (package 'edu.ap.spring.aop') die een bit op key 'login' zet telkens er een user inlogt (4 punten). Gebruik joinPoint.getArgs() om aan email en paswoord te komen. Als bv user 5 inlogt, ziet de key 'login' er als volgt uit : 00001. Logt user 7 ook in, dan wordt 'login' 0000101.
+
+Vraag 4 (13 punten)
+
+Maak een Spring boot web applicatie die bijgevoegd bestand (infractions.json) inleest wanneer de applicatie start (3 punten). De web applicatie heeft drie urls :
+1/ een url (http://localhost:/8080/infractions) die GET requests accepteert en het aantal snelheidsovertredingen (infractions_speed) als een variabele van de url leest. Daarna worden alle records getoond die meer dan of gelijk aan die variabele hebben. Bijvoorbeeld http://localhost:/8080/infractions/20 toont alle records >= 20 overtredingen. (3 punten).
+2/ een url die POST requests accepteert en uit de request het jaar (veld 'year') haalt en dan alle records toont met dat jaar (4 punten).
+3/ een url (http://localhost:/8080/infractions/form) die een form teruggeeft om het jaar uit punt 2 te submitten (3 punten).
+
+Het resultaat wordt getoond in HTML (gebruik thymeleaf), gesorteerd op het veld 'infractions_speed'. Getoonde velden : 'street', 'speed_limit' en 'infractions_speed'.
+Verander niets aan infractions.json!
+
+Vraag 5 (7 punten)
+
+Maak een Spring boot web applicatie (gehost onder http://localhost:8080/exam) die de verschillende delen van een URL interpreteert en dan een pagina teruggeeft met die delen in HTML (gebruik thymeleaf) (4 punten). Zorg ervoor dat de lege delen niet in de lijst zitten (bv http://localhost:8080/exam/first//second geeft enkel 'first' en 'second' terug en niet het lege middengedeelte) (3 punten).
+
+Dus bijvoorbeeld http://localhost:8000/exam//second//third geeft volgende pagina :
+
+second -- third

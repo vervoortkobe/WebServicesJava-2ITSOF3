@@ -1,0 +1,17 @@
+Voeg volgende films toe in Redis. Maak veel elke film een hashmap met twee velden: jaar en acteurs
+Films:
+The Big Lebowski: Jef Bridges, semejsnvksd, eifezfezf, ezfezfz - 1997
+Papillon : Steve McQueen
+
+a. Menu (1 punt)
+Na Opstarten menu voor de nodige menupunten
+
+b. Oplijsten films (2 punten)
+Maak een scherm waar alle films worden opgelijst. Zorg ervoor dat de gebruiker de volgorde 
+kan kiezen : alafabetisch of volgens jaar. getoonde velden naam vd film,jaar en acteurs.
+
+c. Zoeken film (2punten)
+maak een zoekscherm dat toelaat om te zoeken op naam van de film. als resultaat worden de acteurs en het jaar in html getoond
+
+d.Zoeken films met acteur (3 punten)
+maak een zoekscherm dat toelaaat omte zoeken op acteur. Als resultaat worden de films waar de acteur in speelt getoond in HTML

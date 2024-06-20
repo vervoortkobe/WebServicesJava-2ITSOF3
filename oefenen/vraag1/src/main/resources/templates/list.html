@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th='http://www.thymeleaf.org'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+
+<title>Students List</title>
+</head>
+
+<body>
+<div class='card card-body bg-light'>
+<h1>Students List</h1>
+<br/><br/>
+<table  class='table'>
+	<tr>
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Date of birth</th>
+		<th>Study program</th>
+	</tr>
+	<tr th:each='student: ${students}'>
+		<td th:text='${student.firstName}' />
+		<td th:text='${student.lastName}' />
+		<td th:text='${student.dateOfBirth}' />
+		<td th:text='${student.studyProgram}' />
+	</tr>
+</table>
+</div>
+&nbsp;&nbsp;<a href='/student'>Create a new student</a>
+
+</body>
+</html>
+

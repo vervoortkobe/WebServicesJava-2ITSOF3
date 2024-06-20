@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>URL Interpreter</title>
+</head>
+<body>
+<h1>URL Interpreter</h1>
+<ul>
+    <li th:each="part : ${parts}">
+        <span th:text="${part}">Part</span>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,9 @@
+Spring Web spring-boot-starter-web
+Spring Data JPA spring-boot-starter-data-jpa
+Spring Boot DevTools spring-boot-devtools
+Thymeleaf spring-boot-starter-thymeleaf
+H2 Database h2
+Spring Data Redis Driver spring-boot-starter-data-redis
+Spring Boot AOP spring-boot-starter-aop
+Spring Boot REST spring-boot-starter-data-rest
+Maven! JDK17 Spring 3.2.6

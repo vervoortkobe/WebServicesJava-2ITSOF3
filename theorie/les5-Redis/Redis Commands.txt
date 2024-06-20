@@ -1,0 +1,17 @@
+Strings/keys: 
+    - SET, GET, DEL, DUMP, EXISTS, EXPIRE, PERSIST
+    - TTL, KEYS, RANDOMKEY, RENAME, TYPE, INCR, FLUSHALL
+Hashes:
+    - HMSET, HGETALL
+Lists:
+    - LPUSH, LRANGE
+Sets:
+    - SADD, SMEMBERS
+Sorted sets:
+    - ZADD, ZRANGEBYSCORE
+Bitmaps:
+    - SETBIT, GETBIT, BITOP (AND, OR, XOR & NOT), BITCOUNT
+HyperLog:
+    - PFADD, PFCOUNT
+Channels:
+    - SUBSCRIBE, UNSUBSCRIBE, PUBLISH
