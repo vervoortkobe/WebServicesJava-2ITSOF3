@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th='http://www.thymeleaf.org'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+   <body>
+      <div class='card card-body bg-light'>
+         <h1>New User</h1>
+         <br/>
+      <form th:action = "@{/user}" method = "POST">
+         <div>
+            <label> Username : <input type = "text" name = "username"/> </label>
+         </div>
+         <div>
+            <label> Password : &nbsp;<input type = "password" name = "password"/> </label>
+         </div>
+         <div>
+            <input type = "submit" value = "New User"/>
+         </div>
+      </form>
+      </div>
+   </body>
+</html>

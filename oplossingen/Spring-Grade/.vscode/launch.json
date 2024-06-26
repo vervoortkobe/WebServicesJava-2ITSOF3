@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GradeApplication",
+            "request": "launch",
+            "mainClass": "edu.ap.spring.grades.GradeApplication",
+            "projectName": "grade"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GradeApplication<grade>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "edu.ap.spring.grade.GradeApplication",
+            "projectName": "grade",
+            "args": ""
+        }
+    ]
+}
