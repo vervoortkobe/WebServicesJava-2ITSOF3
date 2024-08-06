@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Menu of Movies</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #343a40;
+      margin-bottom: 20px;
+    }
+    .menu-links {
+      margin-bottom: 20px;
+    }
+    .menu-links a {
+      margin-right: 15px;
+      color: #007bff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid #007bff;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .menu-links a:hover {
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #6c757d;
+    }
+    .footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Menu of Movies</h1>
+  <div class="menu-links">
+    <a href="/sorteer">All Movies</a>
+    <a href="/zoek">Search a Movie and Get Actor</a>
+    <a href="/zoekactor">Search an Actor and Get Movie</a>
+  </div>
+</div>
+</body>
+</html>

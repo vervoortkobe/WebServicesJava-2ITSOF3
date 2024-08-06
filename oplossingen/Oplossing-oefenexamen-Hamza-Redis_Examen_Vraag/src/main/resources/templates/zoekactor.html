@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+</head>
+<body>
+<div class='card card-body bg-light'>
+  <h1>kies sorteer richting</h1>
+  <br/><br/>
+  <form th:action='@{/zoekactor}' method='POST'>
+    <label for='zoek'>zoek actor</label>
+    <input type='text' name='zoekactor' placeholder='zoek actor'>
+    <input type='submit' value='send'>
+  </form>
+</div>
+</body>
+</html>
