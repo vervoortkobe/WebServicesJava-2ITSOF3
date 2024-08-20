@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nieuw boek</title>
+</head>
+<body>
+<h1>Nieuw boek toevoegen</h1>
+<form th:action="@{/newbook}" method="post">
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+    </div>
+    <div>
+        <label for="author">Author:</label>
+        <input type="author" id="author" name="author" required />
+    </div>
+    <div>
+        <button type="submit">Maak nieuw boek aan</button>
+    </div>
+    <div th:if="${param.exists}">
+        <p>Book exists already!</p>
+    </div>
+</form>
+</body>
+</html>

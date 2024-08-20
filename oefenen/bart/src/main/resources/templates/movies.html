@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Movies List</h1>
+
+        <!-- Search Bar -->
+        <form action="#" method="get" class="mb-3">
+            <input type="text" name="search" th:value="${search}" placeholder="Search by title or actors" class="form-control" />
+            <input type="hidden" name="sort" th:value="${sort}" />
+            <button type="submit" class="btn btn-primary mt-2">Search</button>
+        </form>
+
+        <!-- Sorting Links -->
+        <div class="mb-3">
+            <a href="#" th:href="@{/movies(sort=title, search=${search})}" th:text="${sort == 'title' ? 'Title (Sorted)' : 'Title'}"></a> |
+            <a href="#" th:href="@{/movies(sort=actors, search=${search})}" th:text="${sort == 'actors' ? 'Actors (Sorted)' : 'Actors'}"></a> |
+            <a href="#" th:href="@{/movies(sort=year, search=${search})}" th:text="${sort == 'year' ? 'Year (Sorted)' : 'Year'}"></a>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Actors</th>
+                    <th>Year</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="movie : ${movies}">
+                    <td th:text="${movie.title}">Title</td>
+                    <td th:text="${movie.actors}">Actors</td>
+                    <td th:text="${movie.year}">Year</td>
+                    <td>
+                        <form th:action="@{/movies/delete}" method="post">
+                            <input type="hidden" name="title" th:value="${movie.title}" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

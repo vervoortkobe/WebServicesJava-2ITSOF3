@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Boeken</title>
+</head>
+<body>
+<div class="container">
+    <a th:href="@{/logout}"><button>Log out</button></a>
+    <a th:href="@{/newbook}"><button>Sla een nieuw boek op</button></a>
+
+    <h1>Boeken lijst</h1>
+
+    <!-- Search Bar -->
+    <form action="#" method="get" class="mb-3">
+        <input type="text" name="search" th:value="${search}" placeholder="Search by title or author" class="form-control" />
+        <input type="hidden" name="sort" th:value="${sort}" />
+        <button type="submit" class="btn btn-primary mt-2">Search</button>
+    </form>
+
+    <!-- Sorting Links -->
+    <div class="mb-3">
+        <a href="#" th:href="@{/home(sort=title, search=${search})}" th:text="${sort == 'title' ? 'Title (Sorted)' : 'Title'}"></a> |
+        <a href="#" th:href="@{/home(sort=author, search=${search})}" th:text="${sort == 'author' ? 'Author (Sorted)' : 'Author'}"></a> |
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.title}">Title</td>
+            <td th:text="${book.author}">Author</td>
+            <td>
+                <form th:action="@{/home/delete}" method="post">
+                    <input type="hidden" name="title" th:value="${book.title}" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
